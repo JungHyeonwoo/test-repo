@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.2'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '1.0.0'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Web (Webhook 서버)
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // WebFlux (OpenAI API 비동기 호출)
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    // JSON 처리 (GitHub API, OpenAI API 응답 파싱)
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+    // Lombok (코드 간소화)
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // 테스트
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
