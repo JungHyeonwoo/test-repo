@@ -22,6 +22,7 @@ public class GithubService {
 
     RestTemplate restTemplate = new RestTemplate();
     HttpHeaders headers = new HttpHeaders();
+    System.out.println("test 출력 추가");
     headers.set("Authorization", "token " + githubToken);
     headers.set("Accept", "application/vnd.github.v3.diff");
 
