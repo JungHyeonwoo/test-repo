@@ -36,6 +36,10 @@ public class GithubService {
     System.out.println(a + b);
   }
 
+  public void subtract(int a, int b) {
+    System.out.println(a - b);
+  }
+
   public void postCommentToPR(String repoName, String prNumber, String review) {
     String url = githubApiUrl + "/repos/" + repoName + "/issues/" + prNumber + "/comments";
 
